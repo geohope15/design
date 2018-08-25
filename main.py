@@ -3,14 +3,6 @@ from flask import Flask , render_template, request, jsonify
 import Uni_To_Zg
 app = Flask(__name__)
 
-@app.route("/convert", methods=["POST"])
-def convert():
-    myinput = request.form['myinput']
-    myinput = Uni_To_Zg.convert(myinput)
-    output = myinput
-    if myinput:
-        return jsonify({'output': output})
-    return jsonify({'output': "Plz write or paste text in input textarea"})
 	
 @app.route("/")
 def home():
